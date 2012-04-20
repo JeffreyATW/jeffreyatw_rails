@@ -1,0 +1,116 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    %meta{:content => "Jeffrey Carl Faden's personal website.", :name => "Description"}
+    %meta{:content => "Jeffrey Carl Faden", :name => "author"}
+    %meta{:content => "JeffreyATW, web development, comics, music, midi, blog", :name => "Keywords"}
+    %title JeffreyATW.com
+    %link{:href => "http://fonts.googleapis.com/css?family=Nobile:regular,bold", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "/static/v13/css/style.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://www.google.com/accounts/o8/ud?source=profiles", :rel => "openid2.provider"}
+    %link{:href => "http://www.google.com/profiles/jeffreyatw", :rel => "openid2.local_id"}
+    %link{:href => "http://www.livejournal.com/users/jeffreyatw/data/foaf", :rel => "meta", :title => "FOAF", :type => "application/rdf+xml"}
+    %link{:href => "http://jeffreyatw.com/feed", :rel => "alternate", :title => "RSS", :type => "application/rss+xml"}
+    %link{:href => "http://jeffreyatw.com/blog/feed/atom", :rel => "alternate", :title => "Atom", :type => "application/atom+xml"}
+    %link{:href => "/static/favicon.ico", :rel => "icon", :type => "image/x-icon"}
+    %link{:href => "/static/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
+    %script{:charset => "utf-8", :src => "/js/jquery.js", :type => "text/javascript"}
+    %script{:src => "http://twitter.com/statuses/user_timeline/jeffreyatw.json?callback=twitterCallback&named_obj", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "/static/v13/js/modernizr-1.5.min.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "/static/v13/js/script.js", :type => "text/javascript"}
+    %script{:defer => "defer", :src => "/v12/pngfix.js", :type => "text/javascript"}
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-134118-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  %body
+    #rotation
+      %h1{:title => "Jeffrey Carl Faden"} JeffreyATW
+      %nav
+        %ul
+          %li.about
+            %a{:href => "https://plus.google.com/u/0/109330412848890683860/about"}
+              %span About
+          %li.portfolio
+            %a{:href => "http://jeffreycarlfaden.com"}
+              %span Portfolio
+          %li.twitter
+            %a{:href => "http://www.twitter.com/jeffreyatw"}
+              %span Twitter
+          %li.facebook
+            %a{:href => "http://www.facebook.com/jeffreyatw"}
+              %span Facebook
+          %li.journal
+            %a{:href => "http://jeffreyatw.com/blog"}
+              %span Blog
+          %li.archive
+            %span Archive
+    %section.about
+      %h2 About
+      %img.border{:alt => "Portrait", :src => "/static/v13/img/portrait.jpg"}
+        %p I'm a web developer living in San Francisco. I enjoy nostalgia, biking, video games, web standards, good ingredients, webcomics, and making music.
+    %section.portfolio
+      %h2 Portfolio
+      %ul
+        %li
+          %a{:href => "http://jeffreycarlfaden.com"} Web Development
+        %li
+          %a{:href => "http://jeffreycarlfaden.com"} HTML5 Toys
+        %li
+          %a{:href => "http://jeffreycarlfaden.com"} Flash
+    %section.twitter
+      %h2 Twitter
+      %ul
+    %section.facebook.right
+      %h2 Facebook
+      %a{:href => "http://www.facebook.com/jeffreyatw", :target => "_TOP", :title => "Jeffrey Carl Faden"}
+        %img.border{:src => "http://badge.facebook.com/badge/6703168.141.1162389104.png"}/
+    %section.journal.right
+      %h2 Journal
+      %ul
+    %section.archive.right
+      %h2 Archive
+      %ul
+        %li
+          %a{:href => "/static/comics.shtml"} Comics
+          \- some old comics I've done
+        %li
+          %a{:href => "/static/ddr_sims.shtml"} Simfiles
+          \- beatmania and DDR simfiles
+        %li
+          %a{:href => "/static/midi.shtml"} Midi
+          \- my midi transcriptions and compositions
+      %h3 Previous Site Versions
+      %ul#versionlist
+        %li
+          %a{:href => "http://sentra.tripod.com"} v1
+        %li
+          %a{:href => "/index_v2.shtml"} v2
+        %li
+          %a{:href => "/index_v3.shtml"} v3
+        %li
+          %a{:href => "/index_v4.shtml"} v4
+        %li
+          %a{:href => "/index_v5.shtml"} v5
+        %li
+          %a{:href => "/index_v6.shtml"} v6
+        %li
+          %a{:href => "http://www.livejournal.com/customview.cgi?styleid=419413&user=jeffreyatw"} v7
+        %li
+          %a{:href => "http://www.livejournal.com/customview.cgi?styleid=481429&user=jeffreyatw"} v8
+        %li
+          %a{:href => "http://www.livejournal.com/customview.cgi?styleid=497465&user=jeffreyatw"} v9
+        %li
+          %a{:href => "http://www.livejournal.com/customview.cgi?styleid=565270&user=jeffreyatw"} v10
+        %li
+          %a{:href => "/v11/"} v11
+        %li
+          %a{:href => "/v12/"} v12
