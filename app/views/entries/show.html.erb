@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @entry.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @entry.url %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @entry.image %>
+</p>
+
+<p>
+  <b>Thumb1:</b>
+  <%= @entry.thumb1 %>
+</p>
+
+<p>
+  <b>Thumb2:</b>
+  <%= @entry.thumb2 %>
+</p>
+
+<p>
+  <b>Thumb3:</b>
+  <%= @entry.thumb3 %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @entry.description %>
+</p>
+
+<p>
+  <b>Section:</b>
+  <%= @entry.section_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
