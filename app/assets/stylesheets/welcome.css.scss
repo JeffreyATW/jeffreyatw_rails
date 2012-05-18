@@ -1,0 +1,198 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: #111 no-repeat;
+  background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 480, from(#444), to(#111));
+  background-image: -moz-radial-gradient(50% 0% 45deg, #444 0px, #111 480px);
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  width: 960px;
+  min-height: 600px;
+  margin: 60px auto 0;
+  -webkit-perspective: 200;
+  -moz-perspective: 200;
+  perspective: 200;
+}
+
+a {
+  color: #666;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0 10px;
+  display: none;
+}
+
+h1, nav ul li, nav ul li a {
+  color: #eee;
+  text-shadow: 0 1px #fff, 0 -1px #000, 0 1px 5px #000;
+}
+
+nav {
+	display: none;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  width: 140px;
+  padding: 0 10px;
+  float: left;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  font-size: 24px;
+}
+
+nav ul li a, nav ul li.archive {
+  padding-bottom: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  display: block;
+  float: left; /* to retain width */
+  -webkit-transition: -webkit-transform .2s ease-out, text-shadow .2s linear;
+  -moz-transition: -moz-transform .2s ease-out, text-shadow .2s linear;
+  transition: transform .2s ease-out, text-shadow .2s linear;
+}
+
+nav ul li a:hover {
+  text-shadow: 0 1px #fff, 0 -1px #000, 0 1px 5px #000, 0 0 10px #fff;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+section {
+  display: none;
+  position: relative;
+  padding: 15px;
+  margin: 120px 0 3em;
+  color: #000;
+  width: 360px;
+  text-shadow: 0 1px #fff;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  background:#eee;
+  background:-webkit-linear-gradient(top, #fff, #ddd);
+  background:-moz-linear-gradient(top, #fff, #ddd);
+  background:-o-linear-gradient(top, #fff, #ddd);
+  background:linear-gradient(top, #fff, #ddd);
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #aaa;
+  font-size: 14px;
+}
+
+section:after {
+	content: "\00a0";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: -80px;
+	left: 20px;
+	bottom: auto;
+	border-width: 40px 40px 40px 0;
+	border-style: solid;
+	border-color: transparent transparent #fff;
+	-webkit-mask-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
+    -moz-mask-image: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
+    mask-image: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
+}
+
+section.right:after {
+  left: auto;
+  right: 20px;
+  border-width: 40px 0 40px 40px;
+}
+
+section.about {
+  margin-left: 40px;
+}
+
+section.portfolio {
+  margin-left: 200px;
+}
+
+section.twitter {
+  margin-left: 350px;
+}
+
+section.facebook {
+  margin-left: 170px;
+}
+
+section.facebook a {
+  display: block;
+  text-align: center;
+}
+
+section.journal {
+  margin-left: 290px;
+}
+
+section h2 {
+  margin: .5em 0;
+  display: none;
+}
+
+section h3 {
+  margin-bottom: 0;
+}
+
+section h3:first-child {
+  margin-top: 0;
+}
+
+section ul li:last-child p {
+  margin-bottom: 0;
+}
+
+section.journal p {
+  margin-top: 0;
+}
+
+section.archive {
+  margin-left: 470px;
+}
+
+section > :first-child {
+	margin-top: 0;
+}
+
+section > :last-child {
+  margin-bottom: 0;
+}
+
+section img.border {
+  border: 1px inset #fff;
+}
+
+section ul {
+  list-style-type: square;
+  padding-left: 25px;
+  margin: 0;
+}
+
+section ul#versionlist {
+  list-style-type: none;
+  overflow: auto;
+}
+
+section ul#versionlist li {
+  float: left;
+  margin-right: 10px;
+}
+
+#rotation {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
