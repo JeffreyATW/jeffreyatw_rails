@@ -58,12 +58,9 @@
     %section.portfolio
       %h2 Portfolio
       %ul
-        %li
-          %a{:href => "http://jeffreycarlfaden.com"} Web Development
-        %li
-          %a{:href => "http://jeffreycarlfaden.com"} HTML5 Toys
-        %li
-          %a{:href => "http://jeffreycarlfaden.com"} Flash
+        - @sections.each do |section|
+          %li
+            = link_to section.name, "http://jeffreycarlfaden.com"
     %section.twitter
       %h2 Twitter
       %ul
