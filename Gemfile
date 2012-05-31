@@ -10,6 +10,9 @@ gem 'sqlite3'
 gem 'json'
 gem 'haml'
 gem 'paperclip'
+gem 'fastercsv' # Only required on Ruby 1.8 and below
+gem 'rails_admin'
+gem "devise"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,4 +35,3 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
-
