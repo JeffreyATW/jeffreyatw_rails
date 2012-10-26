@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 
 set :application, "jeffreyatw"
-set :repository,  "git@jeffreyatw.github.com:JeffreyATW/jeffreyatw.git"
+set :repository,  "git@jeffreyatw-rails.github.com:JeffreyATW/jeffreyatw_rails.git"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`

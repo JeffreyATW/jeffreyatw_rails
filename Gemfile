@@ -30,6 +30,10 @@ group :development do
   gem 'debugger'
 end
 
+group :production do
+  gem 'therubyracer', :platforms => :ruby
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
