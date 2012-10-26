@@ -26,6 +26,10 @@ group :test do
   gem 'sqlite3'
 end
 
+group :development do
+  gem 'debugger'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -35,7 +39,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug'

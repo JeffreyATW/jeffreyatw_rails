@@ -52,6 +52,8 @@ Jeffreyatw::Application.routes.draw do
 
   match "resume" => redirect("http://docs.google.com/View?id=dfjgtf36_23ckhfhths&hgd=1")
 
+  match "noisegate" => "welcome#noisegate"
+
   match "atom(.:format)" => redirect("/car/rss.xml")
   match "characters.shtml" => redirect("/car/characters")
 
