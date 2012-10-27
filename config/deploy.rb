@@ -12,8 +12,6 @@ role :web, "web308.webfaction.com"                          # Your HTTP server, 
 role :app, "web308.webfaction.com"                          # This may be the same as your `Web` server
 role :db,  "web308.webfaction.com", :primary => true # This is where Rails migrations will run
 
-set :rake, "#{rake} --trace"
-
 set :user, "jeffreyatw"
 set :use_sudo, false
 default_run_options[:pty] = true
