@@ -155,6 +155,9 @@ section {
     list-style-type: square;
     padding-left: 25px;
     margin: 0;
+    li {
+      margin: .5em 0;
+    }
     &#versionlist {
       list-style-type: none;
       overflow: auto;
