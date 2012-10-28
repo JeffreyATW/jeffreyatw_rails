@@ -40,7 +40,7 @@ $ ->
 
   $.getJSON "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=jeffreyatw&callback=?", (data) ->
     count = 0
-    $.each data.posts, (i, post) ->
+    $.each data, (i, post) ->
       if count < 5
         unless post.text.substr(0, 1) is "@"
           li = $("<li>")
