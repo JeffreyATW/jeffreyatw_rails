@@ -42,6 +42,8 @@ $ ->
       offset = 2.5 - $(this).index()
       rotate = "rotateY(" + offset + "deg) scaleX(" + (1 - Math.abs(offset) / 24) + ")"
     else
+      $("section").not('.archive').stop().hide()
+      $("section.archive").show()
       rotate = "none"
     $("#rotation").css("-webkit-transform", rotate).css("-moz-transform", rotate).css("-ms-transform", rotate).css("-o-transform", rotate).css("transform", rotate)
 
