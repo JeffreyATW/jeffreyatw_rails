@@ -179,7 +179,7 @@ section {
   body {
     width: 803px;
     min-height: 600px;
-    margin: 40px auto 0;
+    margin: 60px auto 0;
   }
   hgroup h2 {
     font-size: 1.5em;
@@ -187,20 +187,23 @@ section {
   h1 {
     font-size: 3em;
   }
-  nav ul li {
-    font-size: 1.5em;
-    float: left;
-    a {
+  nav ul {
+    margin-top: 2em;
+    li {
+      font-size: 1.5em;
       float: left;
-      &:hover {
-        text-shadow: 0 1px #fff, 0 -1px #000, 0 1px 5px #000, 0 0 10px #fff;
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        transform: scale(1.1);
+      a {
+        float: left;
+        &:hover {
+          text-shadow: 0 1px #fff, 0 -1px #000, 0 1px 5px #000, 0 0 10px #fff;
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          transform: scale(1.1);
+        }
       }
-    }
-    a, &.archive {
-      padding-bottom: 30px;
+      a, &.archive {
+        padding-bottom: 30px;
+      }
     }
   }
   section {
