@@ -25,18 +25,29 @@ $ ->
       "almost 2 days ago"
     else
       (parseInt(wordy_time / 86400)).toString() + " days ago"
-  $("h1").fadeIn 1000, ->
-    $("nav").fadeIn 1000
+  $("h1").animate
+    opacity: 1
+  , 1000, ->
+    $("nav").animate
+      opacity: 1
+    , 1000
+    $("section.archive").animate
+      opacity: 1
+    , 1000
 
   $("nav ul li").hover ->
-    offset = undefined
-    section = $("section." + $(this).attr("class"))
-    $("section").not(section).stop().hide()
-    if $.trim(section.children(":not(h2)").text()) isnt "" or section.has("img").length
-      section.not(":animated").css "opacity", 1
-      section.fadeIn()
-    offset = 2.5 - $(this).index()
-    $("#rotation").css "-webkit-transform", "rotateY(" + offset + "deg) scaleX(" + (1 - Math.abs(offset) / 24) + ")"
+    if $("body").width() >= 803
+      section = $("section." + $(this).attr("class"))
+      $("section").not(section).stop().hide()
+      if $.trim(section.children(":not(h1)").text()) isnt "" or section.has("img").length
+        section.not(":animated").css "opacity", 1
+        section.fadeIn()
+      offset = 2.5 - $(this).index()
+      rotate = "rotateY(" + offset + "deg) scaleX(" + (1 - Math.abs(offset) / 24) + ")"
+    else
+      rotate = "none"
+    $("#rotation").css("-webkit-transform", rotate).css("-moz-transform", rotate).css("-ms-transform", rotate).css("-o-transform", rotate).css("transform", rotate)
+
 
   $.getJSON "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=jeffreyatw&callback=?", (data) ->
     count = 0
@@ -55,17 +66,17 @@ $ ->
   $.getJSON "http://pipes.yahoo.com/pipes/pipe.run?_id=3615cdd72b5a2c5e762feca9631d0e79&_render=json&_callback=?", (data) ->
     $.each data.value.items, (i, item) ->
       li = $("<li>")
-      h3 = $("<h3>")
+      h2 = $("<h2>")
       a = $("<a>")
       a.attr "href", item.link
       a.text item.title
-      h3.append a
+      h2.append a
       p = $("<p>")
       text = item.description.replace(/<\/?[^>]+(>|$)/g, " ")
       text = text.substring(0, 200)
       text = text.replace(/\w+$/, "")
       text = text + "..."
       p.html text
-      li.append h3
+      li.append h2
       li.append p
       $("section.journal ul").append li

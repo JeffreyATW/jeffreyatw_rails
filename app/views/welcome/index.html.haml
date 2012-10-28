@@ -5,6 +5,7 @@
     %meta{:content => "Jeffrey Carl Faden's personal website.", :name => "Description"}
     %meta{:content => "Jeffrey Carl Faden", :name => "author"}
     %meta{:content => "JeffreyATW, web development, comics, music, midi, blog", :name => "Keywords"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
     %title JeffreyATW.com
     %link{:href => "http://fonts.googleapis.com/css?family=Nobile:regular,bold", :rel => "stylesheet", :type => "text/css"}
     = stylesheet_link_tag "welcome"
@@ -28,7 +29,9 @@
 
   %body
     #rotation
-      %h1{:title => "Jeffrey Carl Faden"} JeffreyATW
+      %hgroup
+        %h1{:title => "Jeffrey Carl Faden"} JeffreyATW
+        %h2 and Anna
       %nav
         %ul
           %li.about
@@ -49,27 +52,27 @@
           %li.archive
             %span Archive
     %section.about
-      %h2 About
+      %h1 About
       = image_tag "portrait.jpg", :alt => "Portrait", :class => "border"
       %p I'm a web developer living in San Francisco. I enjoy nostalgia, biking, video games, web standards, good ingredients, webcomics, and making music.
     %section.portfolio
-      %h2 Portfolio
+      %h1 Portfolio
       %ul
         - @sections.each do |section|
           %li
             = link_to section.name, "http://jeffreycarlfaden.com"
     %section.twitter
-      %h2 Twitter
+      %h1 Twitter
       %ul
     %section.facebook.right
-      %h2 Facebook
+      %h1 Facebook
       %a{:href => "http://www.facebook.com/jeffreyatw", :target => "_TOP", :title => "Jeffrey Carl Faden"}
         %img.border{:src => "http://badge.facebook.com/badge/6703168.141.1162389104.png"}/
     %section.journal.right
-      %h2 Journal
+      %h1 Journal
       %ul
-    %section.archive.right
-      %h2 Archive
+    %section.archive
+      %h1 Archive
       %ul
         %li
           %a{:href => "/static/comics.shtml"} Comics
@@ -80,7 +83,7 @@
         %li
           %a{:href => "/static/midi.shtml"} Midi
           \- my midi transcriptions and compositions
-      %h3 Previous Site Versions
+      %h2 Previous Site Versions
       %ul#versionlist
         %li
           %a{:href => "http://sentra.tripod.com"} v1
