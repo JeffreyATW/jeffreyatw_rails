@@ -56,6 +56,7 @@ Jeffreyatw::Application.routes.draw do
 
   match "atom(.:format)" => redirect("/car/rss.xml")
   match "characters.shtml" => redirect("/car/characters")
+  match "feed" => redirect("/blog/feed/")
 
   legacy_dirs = ['28', 'Scripts', 'bob', 'bus', 'cgi', 'comics', 'css',
                'davegetz', 'deadwinter', 'draggy', 'drawings', 'evidence',
