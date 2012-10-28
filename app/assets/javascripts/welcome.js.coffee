@@ -38,11 +38,10 @@ $ ->
     offset = 2.5 - $(this).index()
     $("#rotation").css "-webkit-transform", "rotateY(" + offset + "deg) scaleX(" + (1 - Math.abs(offset) / 24) + ")"
 
-  $.getJSON "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=jeffreyatw", (data) ->
+  $.getJSON "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=jeffreyatw&callback=?", (data) ->
     count = 0
-    for i of posts
+    $.each data.posts, (i, post) ->
       if count < 5
-        post = posts[i]
         unless post.text.substr(0, 1) is "@"
           li = $("<li>")
           li.html post.text + " "
