@@ -4,6 +4,10 @@ class AddAttachmentThumb3ToEntries < ActiveRecord::Migration
     add_column :portfolio_entry, :thumb3_content_type, :string
     add_column :portfolio_entry, :thumb3_file_size, :integer
     add_column :portfolio_entry, :thumb3_updated_at, :datetime
+
+    Entry.update_all 'thumb3_file_name = thumb3'
+
+    remove_column :portfolio_entry, :thumb3
   end
 
   def self.down

@@ -1,0 +1,43 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Jeffrey Carl Faden's Portfolio
+    %link{:href => "/static/portfolio/css/portfolio.css", :rel => "stylesheet", :type => "text/css"}/
+    :javascript
+      /* This stylesheet will hide elements for those with JavaScript enabled */
+      document.write('<link rel=\"stylesheet\" href=\"/static/portfolio/css/portfolio-extra.css\" />');
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+    = javascript_include_tag "jquery-color"
+    = javascript_include_tag "portfolio"
+  %body
+    #page
+      %h1 Jeffrey Carl Faden
+      %ul#contents
+        - @sections.each do |section|
+          %li.section
+            %h2= section.name
+            %ul.entries
+              - section.entries.each do |entry|
+                - if entry.name == 'Contact'
+                  %li.entry.open
+                    .description.visible
+                      = entry.description.html_safe
+                - else
+                  %li.entry
+                    %h3= entry.name
+                    .description
+                      - if entry.image
+                        %a.imageLink{:href => entry.url, :target => "_blank"}
+                          %img{:alt => entry.name, :src => "#{entry.image.url}"}
+                      = entry.description.html_safe
+                      %p
+                        %em= entry.pub_date.strftime("%B %Y")
+                      - if entry.name != "Portfolio 2009-2010"
+                        %a.cta{:href => entry.url, :target => "_blank"}
+                          Visit #{entry.name}
+    #notice
+      #arrow
+        \<
+      #noticetext
+        Click my name to expand.
