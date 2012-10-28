@@ -29,7 +29,7 @@
                     .description
                       - if entry.image
                         %a.imageLink{:href => entry.url, :target => "_blank"}
-                          %img{:alt => entry.name, :src => "static/#{entry.image_file_name}"}
+                          %img{:alt => entry.name, :src => "/static/#{entry.image_file_name}"}
                       = entry.description.html_safe
                       %p
                         %em= entry.pub_date.strftime("%B %Y")
