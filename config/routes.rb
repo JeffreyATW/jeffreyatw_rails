@@ -58,6 +58,8 @@ Jeffreyatw::Application.routes.draw do
   match "characters.shtml" => redirect("/car/characters")
   match "feed" => redirect("/blog/feed/")
 
+  match "underwater" => "welcome#underwater"
+
   legacy_dirs = ['28', 'Scripts', 'bob', 'bus', 'cgi', 'comics', 'css',
                'davegetz', 'deadwinter', 'draggy', 'drawings', 'evidence',
                'evildavis', 'facebook', 'ff', 'food', 'gailmuldrow', 'gordon',

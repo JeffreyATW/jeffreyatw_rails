@@ -1,0 +1,31 @@
+<!doctype html>
+%html
+  %head
+    %title Am I Underwater?
+    / A public service by the Lab Zero Maritime Division
+    :css
+      body {
+        font-size: 200px;
+        text-align: center;
+        margin-top: 50px;
+        text-transform: uppercase;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: bold;
+      }
+  %body
+    #yesno
+    %noscript Probably
+    :javascript
+      function error() {
+        document.getElementById('yesno').innerHTML = document.getElementsByTagName('noscript')[0].innerHTML;
+      }
+      
+      function yesno(position) {
+        document.getElementById('yesno').innerHTML = position.coords.altitude < 0 ? "Yes" : "No";
+        console.log('Your altitude: ' + position.coords.altitude);
+      }
+      
+      if (navigator.geolocation)
+        navigator.geolocation.getCurrentPosition(yesno, error);
+      else
+        error();
