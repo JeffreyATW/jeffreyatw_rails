@@ -21,6 +21,9 @@ hgroup {
   h1, h2 {
     display: inline;
   }
+  h2 {
+    font-size: 1.2em;
+  }
   h2 a {
     color: #7279da;
     font-family: "Carter One";
@@ -35,7 +38,7 @@ h1, nav ul li, nav ul li a {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
   margin: 20px 10px 0;
   opacity: 0;
 }
@@ -50,9 +53,9 @@ nav {
       padding: 0 10px;
       position: relative;
       z-index: 2;
-      font-size: 1.5em;
+      font-size: 1.2em;
       a, &.archive {
-        padding-bottom: 30px;
+        padding-bottom: 20px;
       }
       a {
         text-decoration: none;
@@ -174,7 +177,14 @@ section {
     min-height: 600px;
     margin: 40px auto 0;
   }
+  hgroup h2 {
+    font-size: 1.5em;
+  }
+  h1 {
+    font-size: 3em;
+  }
   nav ul li {
+    font-size: 1.5em;
     float: left;
     a {
       float: left;
@@ -184,6 +194,9 @@ section {
         -moz-transform: scale(1.1);
         transform: scale(1.1);
       }
+    }
+    a, &.archive {
+      padding-bottom: 30px;
     }
   }
   section {
