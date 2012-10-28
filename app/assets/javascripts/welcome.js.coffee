@@ -28,10 +28,7 @@ $ ->
   $("h1").animate
     opacity: 1
   , 1000, ->
-    $("nav").animate
-      opacity: 1
-    , 1000
-    $("section.archive").animate
+    $("nav, section.archive, hgroup h2").animate
       opacity: 1
     , 1000
 
