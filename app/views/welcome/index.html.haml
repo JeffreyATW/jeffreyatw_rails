@@ -7,7 +7,7 @@
     %meta{:content => "JeffreyATW, web development, comics, music, midi, blog", :name => "Keywords"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
     %title JeffreyATW.com
-    %link{:href => "http://fonts.googleapis.com/css?family=Nobile:regular,bold", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "http://fonts.googleapis.com/css?family=Nobile:regular,bold|Carter+One", :rel => "stylesheet", :type => "text/css"}
     = stylesheet_link_tag "welcome"
     %link{:href => "https://www.google.com/accounts/o8/ud?source=profiles", :rel => "openid2.provider"}
     %link{:href => "http://www.google.com/profiles/jeffreyatw", :rel => "openid2.local_id"}
@@ -31,7 +31,7 @@
     #rotation
       %hgroup
         %h1{:title => "Jeffrey Carl Faden"} JeffreyATW
-        %h2 and Anna
+        %h2= link_to "and Anna", "http://jeffreyandanna.us", :target => "blank"
       %nav
         %ul
           %li.about

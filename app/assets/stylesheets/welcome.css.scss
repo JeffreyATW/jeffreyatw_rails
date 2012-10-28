@@ -17,6 +17,18 @@ a {
   color: #666;
 }
 
+hgroup {
+  h1, h2 {
+    display: inline;
+  }
+  h2 a {
+    color: #7279da;
+    font-family: "Carter One";
+    text-decoration: none;
+    text-shadow: 0.05em 0.1em 0 #081073;
+  }
+}
+
 h1, nav ul li, nav ul li a {
   color: #eee;
   text-shadow: 0 1px #fff, 0 -1px #000, 0 1px 5px #000;
