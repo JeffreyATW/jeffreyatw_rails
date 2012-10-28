@@ -38,16 +38,16 @@ $ ->
     offset = 2.5 - $(this).index()
     $("#rotation").css "-webkit-transform", "rotateY(" + offset + "deg) scaleX(" + (1 - Math.abs(offset) / 24) + ")"
 
-  unless typeof Twitter is "undefined"
+  $.getJSON "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=jeffreyatw", (data) ->
     count = 0
-    for i of Twitter.posts
+    for i of posts
       if count < 5
-        post = Twitter.posts[i]
+        post = posts[i]
         unless post.text.substr(0, 1) is "@"
           li = $("<li>")
           li.html post.text + " "
           a = $("<a>")
-          a.attr "href", "http://twitter.com/#!/JeffreyATW/" + "status/" + post.id_str
+          a.attr "href", "http://twitter.com/JeffreyATW/" + "status/" + post.id_str
           a.attr "title", "Permalink to this twitter (id " + post.id_str + ") at Twitter.com"
           a.text relative_created_at(post.created_at)
           li.append a
