@@ -64,7 +64,7 @@ Jeffreyatw::Application.routes.draw do
                'davegetz', 'deadwinter', 'draggy', 'drawings', 'evidence',
                'evildavis', 'facebook', 'ff', 'food', 'gailmuldrow', 'gordon',
                'groza', 'holocaust', 'images', 'js', 'ld', 'mario', 'media',
-               'mid', 'midgarswamp', 'movies', 'mt', 'music', 'newsidebar',
+               'menorah', 'mid', 'midgarswamp', 'movies', 'mt', 'music', 'newsidebar',
                'pants', 'photos', 'phpMyAdmin', 'professional', 'punks',
                'r', 'rpgcomics', 'sa', 'saddam', 'sidebar', 'sillybaby',
                'sm', 'sophie', 'store', 'tane', 'temp', 'v10', 'v11', 'v12',
