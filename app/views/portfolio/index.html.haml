@@ -29,7 +29,6 @@
                     .description
                       - if entry.image
                         %a.imageLink{:href => entry.url, :target => "_blank"}
-                          - debugger
                           %img{:alt => entry.name, :src => (entry.image_content_type.present? ? entry.image : "/static/#{entry.image_file_name}")}
                       = entry.description.html_safe
                       %p

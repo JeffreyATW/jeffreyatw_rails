@@ -16,7 +16,7 @@ RailsAdmin.config do |config|
   # config.audit_with :paper_trail, User
 
   # Set the admin name here (optional second array element will appear in a beautiful RailsAdmin red ©)
-  config.main_app_name = ['Jeffreyatw', 'Admin']
+  config.main_app_name = ['JeffreyATW', 'Admin']
   # or for a dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
@@ -79,7 +79,7 @@ RailsAdmin.config do |config|
 
   # All fields marked as 'hidden' won't be shown anywhere in the rails_admin unless you mark them as visible. (visible(true))
 
-  # config.model Entry do
+  config.model Entry do
   #   # Found associations:
   #   # Found columns:
   #     configure :id, :integer 
@@ -92,10 +92,20 @@ RailsAdmin.config do |config|
   #   list do; end
   #   export do; end
   #   show do; end
-  #   edit do; end
+    edit do
+      field :name
+      field :description
+      field :url
+      field :pub_date
+      field :section
+      field :image
+      field :thumb1
+      field :thumb2
+      field :thumb3
+    end
   #   create do; end
   #   update do; end
-  # end
+  end
   # config.model Section do
   #   # Found associations:
   #   # Found columns:
