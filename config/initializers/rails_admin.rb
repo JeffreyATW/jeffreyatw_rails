@@ -102,6 +102,7 @@ RailsAdmin.config do |config|
       field :thumb1
       field :thumb2
       field :thumb3
+      field :visible
     end
   #   create do; end
   #   update do; end

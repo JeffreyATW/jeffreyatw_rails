@@ -2,6 +2,6 @@ class PortfolioController < ApplicationController
   layout false
 
   def index
-    @sections = Section.all
+    @sections = Section.visible
   end
 end

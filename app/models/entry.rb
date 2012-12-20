@@ -1,9 +1,10 @@
 class Entry < ActiveRecord::Base
   self.table_name = "portfolio_entry"
 
-  attr_accessible :name, :description, :url, :section_id, :pub_date, :image, :thumb1, :thumb2, :thumb3
+  attr_accessible :name, :description, :url, :section_id, :pub_date, :image, :thumb1, :thumb2, :thumb3, :visible
 
   default_scope :order => ["pub_date desc"]
+  scope :visible, :conditions => ["visible = 1"]
 
   belongs_to :section
 

@@ -18,7 +18,7 @@
           %li.section
             %h2= section.name
             %ul.entries
-              - section.entries.each do |entry|
+              - section.entries.visible.each do |entry|
                 - if entry.name == 'Contact'
                   %li.entry.open
                     .description.visible
