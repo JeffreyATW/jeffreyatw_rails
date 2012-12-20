@@ -27,7 +27,7 @@
                   %li.entry
                     %h3= entry.name
                     .description
-                      - if entry.image
+                      - if entry.image.present?
                         %a.imageLink{:href => entry.url, :target => "_blank"}
                           %img{:alt => entry.name, :src => (entry.image_content_type.present? ? entry.image : "/static/#{entry.image_file_name}")}
                       = entry.description.html_safe
