@@ -1,3 +1,124 @@
-// Place all the styles related to the Portfolio controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@charset "utf-8";
+@import "compass";
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  background-color: #fff;
+  margin: 0;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Titillium Web', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.main_heading {
+  margin: 20% 0;
+}
+
+.section {
+  margin: 10% 0;
+  padding: 5% 0;
+  overflow: hidden;
+  @include transition(background-color 1s ease-out);
+  h1, h2 {
+    cursor: pointer;
+    &:hover {
+      color: #555555;
+    }
+  }
+  h2 {
+    font-size: 2em;
+  }
+  &.open {
+    background-color: #eee;
+  }
+}
+
+a {
+    text-decoration: none;
+    color: #06f;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.cta {
+    background-color: #06f;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    display: inline-block;
+}
+
+p {
+  margin: 0 0 .5em;
+    line-height: 1.5em;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.entries
+{
+  height: 0;
+  overflow: hidden;
+  @include transition(height .5s ease-out);
+}
+
+.entry
+{
+  margin: 0 auto .5em;
+  max-width: 1000px;
+  overflow: auto;
+}
+
+.description
+{
+  display: none;
+  margin-top: 5px;
+  /* Avoids jQuery slideToggle jump bug. */
+  letter-spacing: normal;
+  padding: 0;
+  width: 50%;
+}
+
+.visible
+{
+  margin-top: .5em;
+  display: block;
+}
+
+.imageLink
+{
+  float: right;
+  clear: right;
+    padding: 0;
+}
+
+.imageLink img {
+    border: 1px solid #aaaaaa;
+    margin: 0 0 .5em .5em;
+    padding: 0;
+}
+
+ul {
+    padding: 5px;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: .5em;
+}

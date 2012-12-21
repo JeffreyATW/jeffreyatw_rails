@@ -3,13 +3,19 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $("h1").click ->
-    $("#contents").slideToggle "slow"
+  $(".main_heading").fitText 1.5
+  $("section h1").fitText 2
 
-  $("h2").click ->
-    $(this).parent().children(".entries").slideToggle "slow"
+  $(".section h1").click ->
+    $parent = $(this).parent()
+    $entries = $parent.find(".entries")
+    $parent.toggleClass "open"
+    if $parent.hasClass "open"
+      $entries.css 'height', $entries.find('.wrapper').height()
+    else
+      $entries.css 'height', 0
 
-  $("h3").click ->
+  $(".section h2").click ->
     $parent = $(this).parent()
     $description = $parent.children(".description")
     if $description.css("display") is "block"
@@ -21,9 +27,3 @@ $ ->
         backgroundColor: "#EEEEEE"
       , 1500
     $description.slideToggle "slow"
-
-  $("#notice").animate
-    right: "10px"
-    opacity: 1
-  , 3000
-  $("#notice").fadeOut 3000
