@@ -1,18 +1,14 @@
 - section.entries.visible.each do |entry|
-  - if entry.name == 'Contact'
-    %li.entry.open
-      .description.visible
-        = entry.description.html_safe
-  - else
-    %li.entry{"data-mp4" => entry.mp4, "data-webm" => entry.webm}
+  %li.entry{"data-mp4" => entry.mp4, "data-webm" => entry.webm}
+    .entry_heading_container
       %h2.entry_heading= entry.name
-      .contents
-        .video
-          .gradient
-        .container
-          .description
-            %em= entry.pub_date.strftime("%B %Y")
-            = entry.description.html_safe
-          .cta_container
-            %a.cta{:href => entry.url, :target => "_blank"}
-              Visit #{entry.name}
+    .contents
+      .video{:style => "background-image: url(#{entry.image});"}
+        .gradient
+      .container
+        .description
+          %em= entry.pub_date.strftime("%B %Y")
+          = entry.description.html_safe
+        .cta_container
+          %a.cta{:href => entry.url, :target => "_blank"}
+            Visit #{entry.name}

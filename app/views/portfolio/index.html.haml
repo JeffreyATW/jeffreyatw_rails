@@ -1,19 +1,42 @@
 !!!
-%html
+%html{:class => "no-js"}
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
     %title Jeffrey Carl Faden's Portfolio
     = stylesheet_link_tag "//fonts.googleapis.com/css?family=Titillium+Web:700"
     = stylesheet_link_tag "portfolio"
+    = javascript_include_tag "modernizr-portfolio"
   %body
     %h1.main_heading Jeffrey Carl Faden
     - @sections.each do |section|
-      %section.section
+      %section.section{"data-mp4" => (section.mp4.present? ? section.mp4 : nil), "data-webm" => (section.webm.present? ? section.webm : nil)}
+        - if section.mp4.present? or section.webm.present?
+          .section_video.video{:style => "background-image: url(#{section.image});"}
+            .gradient
         %h1.section_heading= section.name
-        .wrapper
-          - section.subsections.visible.each do |subsection|
-            %section.subsection
-              %h1.subsection_heading= subsection.name
-              %ul.entries
-                = render :partial => "portfolio/section", :object => subsection
+        - if section.description.present?
+          .section_description
+            = section.description.html_safe
+        - section.subsections.visible.each do |subsection|
+          %section.subsection
+            %h1.subsection_heading= subsection.name
+            %ul.entries
+              = render :partial => "portfolio/section", :object => subsection
+    %section.section
+      %h1.section_heading= link_to "Resume", "http://jeffreyatw.com/resume", :target => "_blank"
+    %section.section
+      %ul.contact_slots
+        %li
+          %a{:href => "mailto:jeffreyatw@gmail.com", :class => "email"}
+            Email
+        %li
+          %a{:href => "https://twitter.com/JeffreyATW", :class => "twitter"}
+            Twitter
+        %li
+          %a{:href => "https://www.facebook.com/jeffreyatw", :class => "facebook"}
+            Facebook
+        %li
+          %a{:href => "http://www.linkedin.com/in/jeffreycarlfaden", :class => "linkedin"}
+            LinkedIn
+
     = javascript_include_tag "portfolio"

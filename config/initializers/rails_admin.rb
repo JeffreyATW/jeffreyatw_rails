@@ -106,7 +106,7 @@ RailsAdmin.config do |config|
   #   create do; end
   #   update do; end
   end
-  # config.model Section do
+  config.model Section do
   #   # Found associations:
   #   # Found columns:
   #     configure :id, :integer 
@@ -116,8 +116,17 @@ RailsAdmin.config do |config|
   #   list do; end
   #   export do; end
   #   show do; end
-  #   edit do; end
+    edit do
+      field :name
+      field :description
+      field :entries
+      field :subsections
+      field :image
+      field :mp4
+      field :webm
+      field :visible
+    end
   #   create do; end
   #   update do; end
-  # end
+  end
 end

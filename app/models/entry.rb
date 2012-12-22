@@ -8,7 +8,7 @@ class Entry < ActiveRecord::Base
 
   belongs_to :entry_owner, :polymorphic => true
 
-  has_attached_file :image, :styles => {:normal => "250x200>"}, :default_style => :normal
+  has_attached_file :image
   has_attached_file :mp4
   has_attached_file :webm
 end

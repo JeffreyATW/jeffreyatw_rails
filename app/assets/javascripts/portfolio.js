@@ -10,11 +10,22 @@ $(function() {
   $(".section_heading").fitText(2);
 
   $(".section_heading").click(function() {
-    var $parent = $(this).parent(),
-      $subs = $parent.find(".subsection");
-    $parent.toggleClass("open");
-    $subs.slideToggle();
-    $(".subsection_heading").fitText(2.5);
+    var $this = $(this), $section, $children, $video;
+    if ($this.siblings().length) {
+      $section = $this.parent();
+      $video = $section.find('.section_video');
+      $children = $section.find(".subsection, .section_description");
+      $section.toggleClass("open");
+      $children.add($video).slideToggle();
+      $(".subsection_heading", $section).fitText(2.5);
+      if ($section.hasClass("open")) {
+        $video.videoBG({
+          mp4: $section.data('mp4'),
+          webm: $section.data('webm'),
+          height: 300
+        });
+      }
+    }
   });
 
   $(".entry_heading").click(function() {
