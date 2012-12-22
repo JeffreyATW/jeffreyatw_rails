@@ -28,18 +28,20 @@ h1 {
   padding: 5% 0;
   overflow: hidden;
   @include transition(background-color 1s ease-out);
-  h1, h2 {
-    cursor: pointer;
-    &:hover {
-      color: #555555;
-    }
-  }
-  h2 {
-    font-size: 2em;
-  }
   &.open {
     background-color: #eee;
   }
+}
+
+.section_heading, .entry_heading {
+  cursor: pointer;
+  &:hover {
+    color: #555555;
+  }
+}
+
+.entry_heading {
+  font-size: 2em;
 }
 
 a {
@@ -51,74 +53,124 @@ a:hover {
     text-decoration: underline;
 }
 
-a.cta {
+.cta {
     background-color: #06f;
-    padding: 5px;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10px;
     color: #fff;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
+    @include border-radius(5px);
     display: inline-block;
 }
 
 p {
-  margin: 0 0 .5em;
     line-height: 1.5em;
 }
 
-p:last-child {
-    margin-bottom: 0;
-}
-
-.entries
-{
-  height: 0;
-  overflow: hidden;
-  @include transition(height .5s ease-out);
-}
-
-.entry
-{
-  margin: 0 auto .5em;
-  max-width: 1000px;
-  overflow: auto;
-}
-
-.description
-{
+.subsection {
   display: none;
-  margin-top: 5px;
-  /* Avoids jQuery slideToggle jump bug. */
-  letter-spacing: normal;
+  overflow: hidden;
+}
+
+.entries {
+  margin: 0;
+  list-style-type: none;
   padding: 0;
+}
+
+.entry {
+  padding: 0;
+  margin: 2em 0;
+  @include transition(margin .5s ease-out);
+  &.open {
+    color: #fff;
+    .entry_heading {
+      font-size: 4em;
+      &:hover {
+        color: #fff;
+      }
+    }
+    margin: 0;
+  }
+}
+
+.container, .entry_heading {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 10px;
+  position: relative;
+}
+
+.entry_heading {
+  position: relative;
+  z-index: 2;
+  @include transition(color .5s ease-out, font-size .5s ease-out);
+}
+
+.container {
+  padding-bottom: 1em;
+  z-index: 1;
+}
+
+.contents {
+  background: #444;
+  display: none;
+}
+
+.video {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.videoBG, .videoBG_wrapper {
+  width: 100% !important;
+}
+
+.gradient {
+  @include background-image(linear-gradient(top, rgba(68, 68, 68, 0), rgba(68, 68, 68, 1)));
+  bottom: 0;
+  height: 300px;
+  position: absolute;
+  width: 100%;
+}
+
+.description {
+  @include transition(color .5s ease-out);
   width: 50%;
 }
 
-.visible
-{
-  margin-top: .5em;
-  display: block;
+.cta_container {
+  bottom: 2em;
+  position: absolute;
+  right: 10px;
 }
 
-.imageLink
-{
-  float: right;
-  clear: right;
-    padding: 0;
+@media screen and (max-width: 800px) {
+  .entry_heading {
+    font-size: 1.5em;
+  }
+  .entry.open {
+    .entry_heading {
+      font-size: 3em;
+    }
+  }
+  .description {
+    width: auto;
+  }
+  .cta_container {
+    position: static;
+  }
 }
 
-.imageLink img {
-    border: 1px solid #aaaaaa;
-    margin: 0 0 .5em .5em;
-    padding: 0;
-}
-
-ul {
-    padding: 5px;
-    margin: 0;
-    list-style-type: none;
-}
-
-ul li {
-    margin-bottom: .5em;
+@media screen and (max-width: 500px) {
+  .entry_heading {
+    font-size: 1.2em;
+  }
+  .entry.open {
+    .entry_heading {
+      font-size: 2.4em;
+    }
+  }
 }

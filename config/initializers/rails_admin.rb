@@ -97,11 +97,10 @@ RailsAdmin.config do |config|
       field :description
       field :url
       field :pub_date
-      field :section
+      field :entry_owner
       field :image
-      field :thumb1
-      field :thumb2
-      field :thumb3
+      field :mp4
+      field :webm
       field :visible
     end
   #   create do; end

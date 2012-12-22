@@ -13,6 +13,7 @@ gem 'paperclip'
 gem 'fastercsv' # Only required on Ruby 1.8 and below
 gem 'rails_admin'
 gem "devise"
+gem 'acts_as_list'
 
 # Gems used only for assets and not required
 # in production environments by default.

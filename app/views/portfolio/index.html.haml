@@ -9,27 +9,11 @@
     %h1.main_heading Jeffrey Carl Faden
     - @sections.each do |section|
       %section.section
-        %h1= section.name
-        %ul.entries
-          .wrapper
-            - section.entries.visible.each do |entry|
-              - if entry.name == 'Contact'
-                %li.entry.open
-                  .description.visible
-                    = entry.description.html_safe
-              - else
-                %li.entry
-                  %h2= entry.name
-                  .description
-                    - if entry.image.present?
-                      %a.imageLink{:href => entry.url, :target => "_blank"}
-                        %img{:alt => entry.name, :src => (entry.image_content_type.present? ? entry.image : "/static/#{entry.image_file_name}")}
-                    = entry.description.html_safe
-                    %p
-                      %em= entry.pub_date.strftime("%B %Y")
-                    - if entry.name != "Portfolio 2009-2010"
-                      %a.cta{:href => entry.url, :target => "_blank"}
-                        Visit #{entry.name}
-    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
-    = javascript_include_tag "jquery.fittext"
+        %h1.section_heading= section.name
+        .wrapper
+          - section.subsections.visible.each do |subsection|
+            %section.subsection
+              %h1.subsection_heading= subsection.name
+              %ul.entries
+                = render :partial => "portfolio/section", :object => subsection
     = javascript_include_tag "portfolio"

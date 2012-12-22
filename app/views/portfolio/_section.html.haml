@@ -1,0 +1,18 @@
+- section.entries.visible.each do |entry|
+  - if entry.name == 'Contact'
+    %li.entry.open
+      .description.visible
+        = entry.description.html_safe
+  - else
+    %li.entry{"data-mp4" => entry.mp4, "data-webm" => entry.webm}
+      %h2.entry_heading= entry.name
+      .contents
+        .video
+          .gradient
+        .container
+          .description
+            %em= entry.pub_date.strftime("%B %Y")
+            = entry.description.html_safe
+          .cta_container
+            %a.cta{:href => entry.url, :target => "_blank"}
+              Visit #{entry.name}
