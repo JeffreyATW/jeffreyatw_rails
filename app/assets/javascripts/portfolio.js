@@ -19,27 +19,32 @@ $(function() {
       $children.add($video).slideToggle();
       $(".subsection_heading", $section).fitText(2.5);
       if ($section.hasClass("open")) {
-        $video.videoBG({
-          mp4: $section.data('mp4'),
-          webm: $section.data('webm'),
-          height: 300
-        });
+        if ($section.data('mp4') && !$video.find('.videoBG').length) {
+          $video.videoBG({
+            mp4: $section.data('mp4'),
+            webm: $section.data('webm'),
+            poster: $section.data('poster'),
+            height: 300
+          });
+        }
       }
     }
   });
 
   $(".entry_heading").click(function() {
     var $entry = $(this).closest('.entry'),
-        $video = $entry.find('.video'),
+        $video,
         $entryHeading = $entry.find('.entry_heading');
     $entry.toggleClass("open");
     $entry.find(".contents").slideToggle(500, 'swing');
     if ($entry.hasClass("open")) {
+      $video = $entry.find('.video');
       $entryHeading.animate({bottom: -300}, 500, 'swing');
-      if (!$video.find('.videoBG').length) {
+      if ($entry.data('mp4') && !$video.find('.videoBG').length) {
         $video.videoBG({
           mp4: $entry.data('mp4'),
           webm: $entry.data('webm'),
+          poster: $entry.data('poster'),
           height: 300
         });
       }

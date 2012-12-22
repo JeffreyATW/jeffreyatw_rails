@@ -1,5 +1,5 @@
 - section.entries.visible.each do |entry|
-  %li.entry{"data-mp4" => entry.mp4, "data-webm" => entry.webm}
+  %li.entry{"data-mp4" => (entry.mp4.present? ? entry.mp4 : nil), "data-webm" => (entry.webm.present? ? entry.webm : nil), "data-poster" => (entry.image.present? ? entry.image : nil)}
     .entry_heading_container
       %h2.entry_heading= entry.name
     .contents

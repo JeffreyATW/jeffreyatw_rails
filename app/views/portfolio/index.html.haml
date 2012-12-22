@@ -9,7 +9,7 @@
   %body
     %h1.main_heading Jeffrey Carl Faden
     - @sections.each do |section|
-      %section.section{"data-mp4" => (section.mp4.present? ? section.mp4 : nil), "data-webm" => (section.webm.present? ? section.webm : nil)}
+      %section.section{"data-mp4" => (section.mp4.present? ? section.mp4 : nil), "data-webm" => (section.webm.present? ? section.webm : nil), "data-poster" => (section.image.present? ? section.image : nil)}
         - if section.mp4.present? or section.webm.present?
           .section_video.video{:style => "background-image: url(#{section.image});"}
             .gradient
