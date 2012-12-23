@@ -3,8 +3,16 @@
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
     %meta{:name => "viewport", :content => "initial-scale=1.0, maximum-scale=1.0"}
+    %meta{:name => "description", :content => "The portfolio of Jeffrey Carl Faden. Has descriptions of works, and links to a resume and contact info."}
+    %meta{:content => "Jeffrey Carl Faden's Portfolio", :property => "og:site_name"}/
+    %meta{:content => "/assets/portrait.jpg", :property => "og:image"}/
+    %meta{:content => "Jeffrey Carl Faden's Portfolio", :property => "og:title"}/
+    %meta{:content => (url_for :only_path => false), :property => "og:url"}/
+    %meta{:content => "The portfolio of Jeffrey Carl Faden. Has descriptions of works, and links to a resume and contact info.", :property => "og:description"}/
+    = auto_discovery_link_tag "atom", portfolio_feed_url
+    = auto_discovery_link_tag "rss", portfolio_feed_url(:format => "rss")
     %title Jeffrey Carl Faden's Portfolio
-    = stylesheet_link_tag "//fonts.googleapis.com/css?family=Titillium+Web:700"
+    = stylesheet_link_tag "//fonts.googleapis.com/css?family=Titillium+Web:900,700"
     = stylesheet_link_tag "portfolio"
     = javascript_include_tag "modernizr-portfolio"
   %body

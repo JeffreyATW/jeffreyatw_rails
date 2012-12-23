@@ -108,7 +108,8 @@ Jeffreyatw::Application.routes.draw do
     match "#{legacy_file}" => redirect("/static/#{legacy_file}")
   end
 
-  get "portfolio" => "portfolio#index"
+  get "portfolio" => "portfolio#index", :as => :portfolio
+  match "portfolio/feed(.:format)" => "portfolio#feed", :as => :portfolio_feed, :defaults => { :format => 'atom' }
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.

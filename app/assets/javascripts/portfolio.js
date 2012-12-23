@@ -17,8 +17,8 @@ $(function() {
     }
   };
 
-  $(".main_heading").fitText(1.5);
-  $(".section_heading").fitText(2);
+  $(".main_heading").fitText(1.1);
+  $(".section_heading").fitText(1.5);
 
   $(".section_heading").click(function() {
     var $this = $(this), $section, $children, $video;
