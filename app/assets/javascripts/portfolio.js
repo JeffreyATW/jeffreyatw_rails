@@ -6,6 +6,17 @@
 //= require jquery.videoBG
 
 $(function() {
+  var initVideo = function ($el, $video) {
+    if ($el.data('mp4') && !$video.find('.videoBG').length && !navigator.userAgent.match(/(iPhone|iPod)/)) {
+      $video.videoBG({
+        mp4: $el.data('mp4'),
+        webm: $el.data('webm'),
+        poster: $el.data('poster'),
+        height: 300
+      });
+    }
+  };
+
   $(".main_heading").fitText(1.5);
   $(".section_heading").fitText(2);
 
@@ -19,14 +30,7 @@ $(function() {
       $children.add($video).slideToggle();
       $(".subsection_heading", $section).fitText(2.5);
       if ($section.hasClass("open")) {
-        if ($section.data('mp4') && !$video.find('.videoBG').length) {
-          $video.videoBG({
-            mp4: $section.data('mp4'),
-            webm: $section.data('webm'),
-            poster: $section.data('poster'),
-            height: 300
-          });
-        }
+        initVideo($section, $video);
       }
     }
   });
@@ -40,14 +44,7 @@ $(function() {
     if ($entry.hasClass("open")) {
       $video = $entry.find('.video');
       $entryHeading.animate({bottom: -300}, 500, 'swing');
-      if ($entry.data('mp4') && !$video.find('.videoBG').length) {
-        $video.videoBG({
-          mp4: $entry.data('mp4'),
-          webm: $entry.data('webm'),
-          poster: $entry.data('poster'),
-          height: 300
-        });
-      }
+      initVideo($entry, $video);
     } else {
       $entryHeading.animate({bottom: 0}, 500, 'swing');
     }

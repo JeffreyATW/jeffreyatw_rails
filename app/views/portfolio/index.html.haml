@@ -1,7 +1,8 @@
 !!!
 %html{:class => "no-js"}
   %head
-    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    %meta{:name => "viewport", :content => "initial-scale=1.0, maximum-scale=1.0"}
     %title Jeffrey Carl Faden's Portfolio
     = stylesheet_link_tag "//fonts.googleapis.com/css?family=Titillium+Web:700"
     = stylesheet_link_tag "portfolio"
@@ -23,7 +24,8 @@
             %ul.entries
               = render :partial => "portfolio/section", :object => subsection
     %section.section
-      %h1.section_heading= link_to "Resume", "http://jeffreyatw.com/resume", :target => "_blank"
+      %h1.section_heading
+        = link_to "Resume", "http://jeffreyatw.com/resume", :target => "_blank"
     %section.section
       %ul.contact_slots
         %li
