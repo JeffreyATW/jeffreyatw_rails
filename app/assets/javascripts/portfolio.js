@@ -42,6 +42,7 @@ $(function() {
     $entry.toggleClass("open");
     $entry.find(".contents").slideToggle(500, 'swing');
     if ($entry.hasClass("open")) {
+      $('body').animate({scrollTop: $entry.offset().top});
       $video = $entry.find('.video');
       $entryHeading.animate({bottom: -300}, 500, 'swing');
       initVideo($entry, $video);
