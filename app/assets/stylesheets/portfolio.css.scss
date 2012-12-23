@@ -20,7 +20,7 @@ h1 {
 }
 
 .main_heading {
-  margin: 20% 0;
+  margin: 10% 0;
 }
 
 .section, .entry {
@@ -28,7 +28,6 @@ h1 {
 }
 
 .section {
-  margin: 10% 0;
   padding: 5% 0;
   overflow: hidden;
   @include transition(background-color 1s ease-out);
