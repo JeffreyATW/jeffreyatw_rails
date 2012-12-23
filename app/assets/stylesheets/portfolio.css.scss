@@ -33,6 +33,9 @@ h1 {
   @include transition(background-color 1s ease-out);
   &.open {
     background-color: #eee;
+    .section_heading {
+      margin-top: 2em;
+    }
   }
 
   .gradient {
@@ -54,6 +57,7 @@ h1 {
 .section_heading {
   position: relative;
   z-index: 1;
+  @include transition(margin .5s ease-out);
 }
 
 .entry_heading {
