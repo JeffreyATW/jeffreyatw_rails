@@ -50,7 +50,7 @@ Jeffreyatw::Application.routes.draw do
   #     resources :products
   #   end
 
-  match "resume" => redirect("http://docs.google.com/View?id=dfjgtf36_23ckhfhths&hgd=1")
+  match "resume" => redirect("https://docs.google.com/document/pub?id=1cO25pchy9k4VPChGw4CLKbMa4UjMeTXcuc4o3VSYk4g&embedded=true")
 
   match "noisegate" => "welcome#noisegate"
 
