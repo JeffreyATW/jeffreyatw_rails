@@ -35,20 +35,25 @@
       %nav
         %ul.nav_list
           %li.about
-            %a{:href => "https://plus.google.com/u/0/109330412848890683860/about"}
-              %span About
+            %span About
           %li.portfolio
             %a{:href => "http://jeffreycarlfaden.com"}
               %span Portfolio
           %li.twitter
-            %a{:href => "http://www.twitter.com/jeffreyatw"}
+            %a{:href => "https://www.twitter.com/jeffreyatw"}
               %span Twitter
+          %li.tumblr
+            %a{:href => "http://jeffreyatw.tumblr.com"}
+              %span Tumblr
           %li.facebook
-            %a{:href => "http://www.facebook.com/jeffreyatw"}
+            %a{:href => "https://www.facebook.com/jeffreyatw"}
               %span Facebook
           %li.journal
             %a{:href => "http://jeffreyatw.com/blog"}
               %span Blog
+          %li.email
+            %a{:href => 'mailto: jeffreyatw@gmail.com'}
+              %span Email
           %li.archive
             %span Archive
     %section.about
@@ -66,6 +71,9 @@
       %a.twitter-timeline{:href => "https://twitter.com/JeffreyATW", 'data-widget-id' => "390175922600439808"} Tweets by @JeffreyATW
       :javascript
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    %section.tumblr
+      %h1 Tumblr
+      = javascript_include_tag 'http://jeffreyatw.tumblr.com/js'
     %section.facebook.right
       %h1 Facebook
       %a{:href => "http://www.facebook.com/jeffreyatw", :target => "_TOP", :title => "Jeffrey Carl Faden"}
@@ -73,6 +81,9 @@
     %section.journal.right
       %h1 Journal
       %ul
+    %section.email.right
+      %h1 Email
+      %a{:href => 'mailto: jeffreyatw@gmail.com'} jeffreyatw@gmail.com
     %section.archive
       %h1 Archive
       %ul

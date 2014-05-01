@@ -18,9 +18,9 @@ a {
 }
 
 .anna a, .nav_list li a {
-  -webkit-transition: -webkit-transform .2s ease-out, text-shadow .2s linear;
-  -moz-transition: -moz-transform .2s ease-out, text-shadow .2s linear;
-  transition: transform .2s ease-out, text-shadow .2s linear;
+  -webkit-transition: -webkit-transform .2s ease, text-shadow .2s linear;
+  -moz-transition: -moz-transform .2s ease, text-shadow .2s linear;
+  transition: transform .2s ease, text-shadow .2s linear;
 }
 
 .main_heading, .anna {
@@ -61,14 +61,13 @@ a {
   list-style-type: none;
   padding: 0;
   li {
-    width: 5.83em;
+    line-height: 36px;
+    width: 80px;
     padding: 0 10px;
     position: relative;
     z-index: 2;
-    font-size: 1.2em;
-    a, &.archive {
-      padding-bottom: 20px;
-    }
+    font-size: 1.1em;
+    vertical-align: top;
     a {
       text-decoration: none;
       display: block;
@@ -80,7 +79,7 @@ section {
   display: none;
   position: relative;
   padding: 15px;
-  margin: -1em 1em 0;
+  margin: 0 1em;
   color: #000;
   text-shadow: 0 1px #fff;
   -moz-border-radius:10px;
@@ -119,14 +118,34 @@ section {
   	border-style: solid;
   	border-color: transparent transparent #fff;
   	-webkit-mask-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
-      -moz-mask-image: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
-      mask-image: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
+    -moz-mask-image: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
+    mask-image: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
   }
 
   &.right:after {
     left: auto;
     right: 20px;
     border-width: 20px 0 20px 20px;
+  }
+
+  &.tumblr {
+    width: 400px;
+    .tumblr_posts {
+      height: 300px;
+      margin: 0;
+      overflow: scroll;
+      padding: 0;
+      blockquote {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  &.facebook, &.journal, &.email, &.archive {
+    left: 0px;
   }
 
   &.facebook {
@@ -179,9 +198,9 @@ section {
 }
 
 .rotation {
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.4s ease;
+  -moz-transition: -moz-transform 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 @media only screen and (min-width: 803px) {
@@ -200,7 +219,7 @@ section {
   .nav_list {
     margin-top: 2em;
     li {
-      font-size: 1.5em;
+      font-size: 1.3em;
       float: left;
       a {
         float: left;
@@ -220,22 +239,30 @@ section {
     width: 360px;
     margin: 120px 0 3em;
     &.about {
-      margin-left: 2.8em;
+      margin-left: 4%;
     }
     &.portfolio {
-      margin-left: 13.9em;
+      margin-left: 16%;
     }
     &.twitter {
-      margin-left: 24.3em;
+      margin-left: 28%;
+    }
+    &.tumblr {
+      margin-left: 40%;
     }
     &.facebook {
-      margin-left: 7.8em;
+      margin-left: 9%;
     }
     &.journal {
-      margin-left: 16.15em;
+      margin-left: 18%;
+    }
+    &.email {
+      margin-left: 56%;
+      text-align: center;
+      width: 155px;
     }
     &.archive {
-      margin-left: 28.65em;
+      margin-left: 43%;
       display: none;
     }
     &.right:after, &.archive:after {
@@ -251,21 +278,21 @@ section {
 }
 
 @media only screen and (min-width: 960px) {
+  .nav_list {
+    li {
+      width: 100px;
+    }
+  }
   body {
     width: 960px;
     font-size: 16px;
   }
   section {
-    &.facebook {
-      margin-left: 11.8em;
+    &.facebook, &.journal, &.email, &.archive {
+      left: 80px;
     }
-
-    &.journal {
-      margin-left: 20.15em;
-    }
-
-    &.archive {
-      margin-left: 32.65em;
+    &.email {
+      margin-left: 51%;
     }
   }
 }

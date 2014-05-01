@@ -17,7 +17,7 @@ $ ->
       if $.trim(section.children(":not(h1)").text()) isnt "" or section.has("img").length
         section.not(":animated").css "opacity", 1
         section.fadeIn()
-      offset = 2.5 - $(this).index()
+      offset = 3.5 - $(this).index()
       rotate = "rotateY(" + offset + "deg) scaleX(" + (1 - Math.abs(offset) / 24) + ")"
     else
       $archive = $("section.archive")

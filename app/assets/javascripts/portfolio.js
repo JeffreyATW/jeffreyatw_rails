@@ -18,22 +18,21 @@ $(function() {
   };
 
   $(".main_heading").fitText(1.1);
-  $(".section_heading").fitText(1.5);
-
-  $(".section_heading").click(function() {
-    var $this = $(this), $section, $children, $video;
-    if ($this.siblings().length) {
-      $section = $this.parent();
-      $video = $section.find('.section_video');
-      $children = $section.find(".subsection, .section_description");
-      $section.toggleClass("open");
-      $children.add($video).slideToggle();
-      $(".subsection_heading", $section).fitText(2.5);
-      if ($section.hasClass("open")) {
-        initVideo($section, $video);
+  $(".section_heading").fitText(1.5)
+    .click(function() {
+      var $this = $(this), $section, $children, $video;
+      if ($this.siblings().length) {
+        $section = $this.parent();
+        $video = $section.find('.section_video');
+        $children = $section.find(".subsection, .section_description");
+        $section.toggleClass("open");
+        $children.add($video).slideToggle();
+        $(".subsection_heading", $section).fitText(2.5);
+        if ($section.hasClass("open")) {
+          initVideo($section, $video);
+        }
       }
-    }
-  });
+    });
 
   $(".entry_heading").click(function() {
     var $entry = $(this).closest('.entry'),
