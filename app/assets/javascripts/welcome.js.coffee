@@ -16,7 +16,7 @@ $ ->
       $("section").not(section).stop().hide()
       if $.trim(section.children(":not(h1)").text()) isnt "" or section.has("img").length
         section.not(":animated").css "opacity", 1
-        section.fadeIn()
+        section.fadeIn(queue: false)
       offset = 3.5 - $(this).index()
       rotate = "rotateY(" + offset + "deg) scaleX(" + (1 - Math.abs(offset) / 24) + ")"
     else
