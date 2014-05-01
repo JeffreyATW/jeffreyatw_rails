@@ -1,9 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.11'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+gem 'rails', '4.1.0'
 
 gem 'mysql2'
 
@@ -15,26 +12,22 @@ gem 'rails_admin'
 gem "devise"
 gem 'acts_as_list'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.5'
-  gem 'coffee-rails', '~> 3.2.2'
-  gem 'uglifier', '>= 1.3.0'
-  gem 'compass-rails'
-end
-
 group :test do
   gem 'sqlite3'
 end
 
 group :development do
   gem 'debugger'
+  # Gems used only for assets and not required
+  # in production environments by default.
+  gem 'coffee-rails'
+  gem 'uglifier', '>= 1.3.0'
+  gem 'compass-rails', '1.1.7'
 end
 
 group :production do
   gem 'therubyracer', :platforms => :ruby
-  gem 'libv8', '~> 3.11.8'
+  gem 'libv8'
 end
 
 gem 'jquery-rails'
@@ -46,7 +39,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
+gem 'capistrano', '~> 2'
 
 # To use debugger
 # gem 'ruby-debug'

@@ -1,10 +1,8 @@
 class Section < ActiveRecord::Base
   self.table_name = "portfolio_section"
 
-  attr_accessible :name, :description, :visible, :entries, :subsections, :image, :mp4, :webm
-
-  default_scope :order => ["id"]
-  scope :visible, :conditions => ["visible = 1"]
+  default_scope { order('id') }
+  scope :visible, -> { where(visible: true) }
 
   has_many :entries, :as => :entry_owner
   has_many :subsections

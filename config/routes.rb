@@ -50,15 +50,15 @@ Jeffreyatw::Application.routes.draw do
   #     resources :products
   #   end
 
-  match "resume" => redirect("https://docs.google.com/document/pub?id=1cO25pchy9k4VPChGw4CLKbMa4UjMeTXcuc4o3VSYk4g&embedded=true")
+  get "resume" => redirect("https://docs.google.com/document/pub?id=1cO25pchy9k4VPChGw4CLKbMa4UjMeTXcuc4o3VSYk4g&embedded=true")
 
-  match "noisegate" => "welcome#noisegate"
+  get "noisegate" => "welcome#noisegate"
 
-  match "atom(.:format)" => redirect("/car/rss.xml")
-  match "characters.shtml" => redirect("/car/characters")
-  match "feed" => redirect("/blog/feed/")
+  get "atom(.:format)" => redirect("/car/rss.xml")
+  get "characters.shtml" => redirect("/car/characters")
+  get "feed" => redirect("/blog/feed/")
 
-  match "underwater" => "welcome#underwater"
+  get "underwater" => "welcome#underwater"
 
   legacy_dirs = ['28', 'Scripts', 'bob', 'bus', 'cgi', 'comics', 'css',
                'davegetz', 'deadwinter', 'draggy', 'drawings', 'evidence',
@@ -71,7 +71,7 @@ Jeffreyatw::Application.routes.draw do
                'v3', 'v5', 'v6', 'v7', 'v8', 'v9', 'webcam']
 
   legacy_dirs.each do |legacy_dir|
-    match "#{legacy_dir}(/:path(.:format))" => redirect {|params, req| "/static/#{legacy_dir}/#{params[:path]}.#{params[:format]}" }
+    get "#{legacy_dir}(/:path(.:format))" => redirect {|params, req| "/static/#{legacy_dir}/#{params[:path]}.#{params[:format]}" }
   end
 
   legacy_files = ['Library.html', 'about.gif', 'about.shtml',
@@ -105,11 +105,11 @@ Jeffreyatw::Application.routes.draw do
                   'webcams_shadow.gif', 'whenmakefint.txt']
 
   legacy_files.each do |legacy_file|
-    match "#{legacy_file}" => redirect("/static/#{legacy_file}")
+    get "#{legacy_file}" => redirect("/static/#{legacy_file}")
   end
 
   get "portfolio" => "portfolio#index", :as => :portfolio
-  match "portfolio/feed(.:format)" => "portfolio#feed", :as => :portfolio_feed, :defaults => { :format => 'atom' }
+  get "portfolio/feed(.:format)" => "portfolio#feed", :as => :portfolio_feed, :defaults => { :format => 'atom' }
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.

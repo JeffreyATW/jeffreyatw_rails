@@ -6,6 +6,11 @@ class CreateEntries < ActiveRecord::Migration
         t.string :url
         t.text :description
         t.integer :section_id
+        t.datetime :pub_date
+        t.string :image
+        t.string :thumb1
+        t.string :thumb2
+        t.string :thumb3
 
         t.timestamps
       end
