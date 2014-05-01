@@ -20,6 +20,7 @@ group :development do
   gem 'debugger'
   # Gems used only for assets and not required
   # in production environments by default.
+  gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier', '>= 1.3.0'
   gem 'compass-rails', '1.1.7'
