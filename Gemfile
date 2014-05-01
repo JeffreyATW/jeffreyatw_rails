@@ -12,18 +12,17 @@ gem 'rails_admin'
 gem "devise"
 gem 'acts_as_list'
 
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier', '>= 1.3.0'
+gem 'compass-rails'
+
 group :test do
   gem 'sqlite3'
 end
 
 group :development do
   gem 'debugger'
-  # Gems used only for assets and not required
-  # in production environments by default.
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier', '>= 1.3.0'
-  gem 'compass-rails', '1.1.7'
 end
 
 group :production do

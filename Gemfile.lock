@@ -194,7 +194,7 @@ DEPENDENCIES
   acts_as_list
   capistrano (~> 2)
   coffee-rails
-  compass-rails (= 1.1.7)
+  compass-rails
   debugger
   devise
   fastercsv
