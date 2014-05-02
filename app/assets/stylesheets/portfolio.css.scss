@@ -15,7 +15,10 @@ h1, h2 {
 
 h1 {
   font-family: 'Titillium Web', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
   text-transform: uppercase;
+  width: 75%;
 }
 
 .main_heading, .section_heading {
@@ -24,7 +27,7 @@ h1 {
 
 .main_heading {
   font-weight: 900;
-  margin: 10% 0;
+  margin: 10% auto;
 }
 
 .section, .entry {
@@ -261,6 +264,9 @@ p {
 }
 
 @media screen and (max-width: 500px) {
+  h1 {
+    width: auto;
+  }
   .entries {
     margin: 1em 0;
   }
