@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.2'
 
 gem 'mysql2'
 
@@ -22,7 +22,7 @@ group :test do
 end
 
 group :development do
-  gem 'debugger'
+  gem 'byebug'
 end
 
 group :production do

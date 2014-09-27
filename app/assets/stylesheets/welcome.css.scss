@@ -8,9 +8,9 @@ body {
   background-image: -moz-radial-gradient(50% 0% 45deg, #444 0px, #111 480px);
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
   font-size: 13px;
-  -webkit-perspective: 200;
-  -moz-perspective: 200;
-  perspective: 200;
+  -webkit-perspective: 200px;
+  -moz-perspective: 200px;
+  perspective: 200px;
 }
 
 a {
@@ -68,6 +68,9 @@ a {
     z-index: 2;
     font-size: 1.1em;
     vertical-align: top;
+    -moz-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
     a {
       text-decoration: none;
       display: block;
