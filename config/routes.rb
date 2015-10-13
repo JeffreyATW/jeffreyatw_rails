@@ -53,6 +53,7 @@ Jeffreyatw::Application.routes.draw do
   get "resume" => redirect("https://docs.google.com/document/pub?id=1cO25pchy9k4VPChGw4CLKbMa4UjMeTXcuc4o3VSYk4g&embedded=true")
 
   get "noisegate" => "welcome#noisegate"
+  get "fwd-slides" => redirect("http://docs.google.com/present/view?id=dfjgtf36_41hmtj2td2")
 
   get "atom(.:format)" => redirect("/car/rss.xml")
   get "characters.shtml" => redirect("/car/characters")
