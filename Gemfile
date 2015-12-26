@@ -4,6 +4,8 @@ gem 'bundler', '>= 1.8.4'
 
 gem 'rails', '4.1.2'
 
+gem 'net-ssh', '~>2.0'
+
 gem 'mysql2', '~> 0.3.18'
 
 gem 'json'
