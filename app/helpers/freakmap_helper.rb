@@ -1,0 +1,2 @@
+module FreakmapHelper
+end

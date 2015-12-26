@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'bundler', '>= 1.8.4'
+
 gem 'rails', '4.1.2'
 
 gem 'mysql2'
@@ -9,13 +11,20 @@ gem 'haml'
 gem 'paperclip'
 gem 'fastercsv' # Only required on Ruby 1.8 and below
 gem 'rails_admin'
-gem "devise"
+gem 'devise'
 gem 'acts_as_list'
 
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'compass-rails'
+
+gem 'wombat', require: false
+gem 'gon', require: false
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-lodash'
+end
 
 group :test do
   gem 'sqlite3'
