@@ -4,7 +4,7 @@ gem 'bundler', '>= 1.8.4'
 
 gem 'rails', '4.1.2'
 
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 
 gem 'json'
 gem 'haml'
