@@ -61,7 +61,7 @@ Jeffreyatw::Application.routes.draw do
 
   get "underwater" => "welcome#underwater"
 
-  get 'freakmap' => 'freakmap#show'
+  get 'freakmap' => 'freakmap#index'
 
   legacy_dirs = ['28', 'Scripts', 'bob', 'bus', 'cgi', 'comics', 'css',
                'davegetz', 'deadwinter', 'draggy', 'drawings', 'evidence',

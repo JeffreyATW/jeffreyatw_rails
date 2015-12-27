@@ -3,7 +3,7 @@ require 'gon'
 
 class FreakmapController < ApplicationController
 
-  def show
+  def index
     db_locations = []
     db_locations_by_state = {}
     FreakmapLocation.all.each do |fl|
@@ -13,7 +13,7 @@ class FreakmapController < ApplicationController
       db_locations_by_state[fl.state].push(fl)
       db_locations.push(fl)
     end
-    all_locations = []
+    @all_locations = []
     crawl['states'].each do |state|
       state['locations'][0]['locations'].each_with_index do |crawl_loc, i|
         next if i == 0 # table header
@@ -24,15 +24,15 @@ class FreakmapController < ApplicationController
         if location.nil?
           location = FreakmapLocation.new(state: state['name'], city: crawl_loc['city'], name: crawl_loc['name'], machines: crawl_loc['machines'])
         end
-        all_locations.push(location)
+        @all_locations.push(location)
         if location.latitude == nil || location.longitude == nil
           location.geocode
         end
         location.save if location.changed?
       end
     end
-    (db_locations - all_locations).each(&:destroy)
-    gon.push(locations: all_locations)
+    (db_locations - @all_locations).each(&:destroy)
+    gon.jbuilder
   end
 
   private
