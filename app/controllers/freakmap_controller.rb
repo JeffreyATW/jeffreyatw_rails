@@ -15,7 +15,8 @@ class FreakmapController < ApplicationController
     end
     all_locations = []
     crawl['states'].each do |state|
-      state['locations'][0]['locations'].each do |crawl_loc|
+      state['locations'][0]['locations'].each_with_index do |crawl_loc, i|
+        next if i == 0 # table header
         location = nil
         if db_locations_by_state[state['name']].present?
           location = db_locations_by_state[state['name']].find{|dbl| dbl.state == state['name'] and dbl.city == crawl_loc['city'] and dbl.name == crawl_loc['name']}
