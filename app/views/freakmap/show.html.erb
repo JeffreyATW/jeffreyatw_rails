@@ -1,8 +1,21 @@
-<%= include_gon %>
-<%= javascript_include_tag 'freakmap' %>
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJtuJh7CUyciLAoSNyNIP7d0jKI4juqXE&callback=initMap">
-</script>
-<div id="map" style="height: 100%">
-
-</div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Freakmap</title>
+    <style>
+      html, body, #map {
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <%= include_gon %>
+    <%= javascript_include_tag 'freakmap' %>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJtuJh7CUyciLAoSNyNIP7d0jKI4juqXE&callback=initMap">
+    </script>
+  </body>
+</html>

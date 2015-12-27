@@ -9,10 +9,12 @@ var initMap = function () {
   geocoder = new google.maps.Geocoder();
 
   _.forEach(gon.locations, function (location) {
-    var marker = new google.maps.Marker({
-      map: map,
-      position: {lat: location.latitude, lng: location.longitude},
-      title: location.machines + ' @ ' + location.name
-    });
+    if (_.isNumber(location.longitude) && _.isNumber(location.latitude)) {
+      var marker = new google.maps.Marker({
+        map: map,
+        position: {lat: location.latitude, lng: location.longitude},
+        title: location.machines + ' @ ' + location.name
+      });
+    }
   });
 };
