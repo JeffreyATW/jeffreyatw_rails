@@ -21,6 +21,7 @@ gem 'coffee-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'compass-rails'
 
+gem 'geocoder'
 gem 'wombat', require: false
 gem 'gon', require: false
 

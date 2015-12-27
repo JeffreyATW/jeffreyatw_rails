@@ -8,22 +8,11 @@ var initMap = function () {
   });
   geocoder = new google.maps.Geocoder();
 
-  _.forEach(gon.crawl.states, function (state) {
-    var stateName = state.name;
-    _.chain(state).get('cities[0].cities').rest().forEach(function (location) {
-      var name = location.name;
-      var city = location.city;
-      var version = location.version;
-
-      geocoder.geocode({address: name + ', ' + city + ', ' + stateName}, function (results, status) {
-        if (status === google.maps.GeocoderStatus.OK) {
-          var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location,
-            title: version + ' @ ' + name
-          });
-        }
-      });
-    }).value();
+  _.forEach(gon.locations, function (location) {
+    var marker = new google.maps.Marker({
+      map: map,
+      position: {lat: location.latitude, lng: location.longitude},
+      title: location.machines + ' @ ' + location.name
+    });
   });
 };

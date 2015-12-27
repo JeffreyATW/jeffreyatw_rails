@@ -4,7 +4,34 @@ require 'gon'
 class FreakmapController < ApplicationController
 
   def show
-    gon.push(crawl: crawl)
+    db_locations = []
+    db_locations_by_state = {}
+    FreakmapLocation.all.each do |fl|
+      if db_locations_by_state[fl.state].nil?
+        db_locations_by_state[fl.state] = []
+      end
+      db_locations_by_state[fl.state].push(fl)
+      db_locations.push(fl)
+    end
+    all_locations = []
+    crawl['states'].each do |state|
+      state['locations'][0]['locations'].each do |crawl_loc|
+        location = nil
+        if db_locations_by_state[state['name']].present?
+          location = db_locations_by_state[state['name']].find{|dbl| dbl.state == state['name'] and dbl.city == crawl_loc['city'] and dbl.name == crawl_loc['name']}
+        end
+        if location.nil?
+          location = FreakmapLocation.new(state: state['name'], city: crawl_loc['city'], name: crawl_loc['name'], machines: crawl_loc['machines'])
+        end
+        all_locations.push(location)
+        if location.latitude == nil || location.longitude == nil
+          location.geocode
+        end
+        location.save if location.changed?
+      end
+    end
+    (db_locations - all_locations).each(&:destroy)
+    gon.push(locations: all_locations)
   end
 
   private
@@ -16,11 +43,11 @@ class FreakmapController < ApplicationController
 
         states 'css=table.standardtext li', :iterator do
           name 'css=a'
-          cities 'css=a', :follow do
-            cities 'css=table.standardtext tr', :iterator do
+          locations 'css=a', :follow do
+            locations 'css=table.standardtext tr', :iterator do
               name 'css=td:nth-child(1)'
               city 'css=td:nth-child(2)'
-              version 'css=td:nth-child(3)'
+              machines 'css=td:nth-child(3)'
             end
           end
         end

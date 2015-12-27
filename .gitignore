@@ -6,3 +6,4 @@ db/schema.rb
 log/*.log
 tmp/
 .sass-cache/
+.byebug_history
