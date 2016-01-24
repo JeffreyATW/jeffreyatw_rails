@@ -25,6 +25,8 @@ gem 'geocoder'
 gem 'wombat', require: false
 gem 'gon', require: false
 
+gem 'dotenv-rails'
+
 gem 'puma'
 
 source 'https://rails-assets.org' do
