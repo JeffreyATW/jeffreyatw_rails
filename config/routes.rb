@@ -54,6 +54,7 @@ Jeffreyatw::Application.routes.draw do
 
   get "noisegate" => "welcome#noisegate"
   get "fwd-slides" => redirect("http://docs.google.com/present/view?id=dfjgtf36_41hmtj2td2")
+  get "fwd-setup" => redirect("https://noisebridge.net/wiki/Front-end_Web_Development#setup")
 
   get "atom(.:format)" => redirect("/car/rss.xml")
   get "characters.shtml" => redirect("/car/characters")
