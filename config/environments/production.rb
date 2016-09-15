@@ -42,9 +42,6 @@ Jeffreyatw::Application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
 
-  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( welcome.css modernizr.js modernizr-portfolio.js welcome.js portfolio.js portfolio.css freakmap.js )
-
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 

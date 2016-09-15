@@ -1,12 +1,10 @@
-//= require 'lodash'
+var _ = require('lodash');
 
-var map, geocoder;
-var initMap = function () {
-  map = new google.maps.Map(document.getElementById('map'), {
+window.initMap = function () {
+  var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 39.50, lng: -98.35},
     zoom: 4
   });
-  geocoder = new google.maps.Geocoder();
 
   _.forEach(gon.locations, function (location) {
     if (_.isNumber(location.longitude) && _.isNumber(location.latitude)) {

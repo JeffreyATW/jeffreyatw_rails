@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'bundler', '>= 1.8.4'
 
-gem 'rails', '4.1.2'
+gem 'rails', '~> 4.2.7'
 
 gem 'net-ssh', '~>2.0'
 
@@ -29,9 +29,7 @@ gem 'dotenv-rails'
 
 gem 'puma'
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-lodash'
-end
+gem 'browserify-rails'
 
 group :test do
   gem 'sqlite3'

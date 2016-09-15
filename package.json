@@ -1,0 +1,16 @@
+{
+  "name": "jeffreyatw",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JeffreyATW/jeffreyatw_rails.git"
+  },
+  "dependencies": {
+    "browserify": "~10.2.4",
+    "browserify-incremental": "^3.0.1",
+    "lodash": "^4.15.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  }
+}
