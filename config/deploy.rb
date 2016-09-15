@@ -1,42 +1,53 @@
-require "bundler/capistrano"
-require "dotenv/capistrano"
+# config valid only for current version of Capistrano
+lock '3.6.1'
 
 set :application, "jeffreyatw"
 set :repository,  "git@jeffreyatw-rails.github.com:JeffreyATW/jeffreyatw_rails.git"
 
-set :scm, :git
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
+# Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/jeffreyatw/webapps/jeffreyatw"
 
-role :web, "web308.webfaction.com"                          # Your HTTP server, Apache/etc
-role :app, "web308.webfaction.com"                          # This may be the same as your `Web` server
-role :db,  "web308.webfaction.com", :primary => true # This is where Rails migrations will run
+# Default value for :scm is :git
+# set :scm, :git
 
-set :user, "jeffreyatw"
-set :use_sudo, false
-default_run_options[:pty] = true
+# Default value for :format is :airbrussh.
+# set :format, :airbrussh
 
-default_environment['PATH'] = "/home/jeffreyatw/webapps/jeffreyatw/gems/bin:$PATH"
-default_environment['GEM_PATH'] = "/home/jeffreyatw/webapps/jeffreyatw/gems"
-default_environment['GEM_HOME'] = "/home/jeffreyatw/webapps/jeffreyatw/gems"
+# You can configure the Airbrussh format using :format_options.
+# These are the defaults.
+# set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
 
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
+# Default value for :pty is false
+# set :pty, true
 
-# If you are using Passenger mod_rails uncomment this:
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+# Default value for :linked_files is []
+set :linked_files, fetch(:linked_files, []).push('.env')
+
+# Default value for linked_dirs is []
+set :linked_dirs, fetch(:linked_dirs, []).push('log')
+
+# Default value for default_env is {}
+# Default value for default_env is {}
+set :default_env, {
+  PATH: "#{fetch(:deploy_to)}/gems/bin:$PATH",
+  GEM_PATH: "#{fetch(:deploy_to)}/gems",
+  GEM_HOME: "#{fetch(:deploy_to)}/gems"
+}
+
+set :tmp_dir, "#{fetch(:deploy_to)}/tmp"
+
+# Default value for keep_releases is 5
+# set :keep_releases, 5
 
 namespace :deploy do
   desc "Restart nginx"
   task :restart do
-    run "#{deploy_to}/bin/restart"
+    on roles(:app) do
+      execute "#{fetch(:deploy_to)}/bin/restart"
+    end
   end
 
   desc "Install npm modules"
@@ -44,14 +55,17 @@ namespace :deploy do
     run "cd #{current_path}; npm install"
   end
 end
+after :deploy, 'deploy:restart'
 after :deploy, 'deploy:npm_install'
 
 namespace :db do
 
   desc "Populates the Production Database"
   task :seed do
-    puts "\n\n=== Populating the Production Database! ===\n\n"
-    run "cd #{current_path}; rake db:seed RAILS_ENV=production"
+    on roles(:app) do
+      puts "\n\n=== Populating the Production Database! ===\n\n"
+      execute "cd #{fetch(:current_path)}; rake db:seed RAILS_ENV=production"
+    end
   end
 
 end
