@@ -56,8 +56,8 @@ namespace :deploy do
     run "cd #{current_path}; npm install"
   end
 end
+after 'bundler:install', 'deploy:npm_install'
 after :deploy, 'deploy:restart'
-after :deploy, 'deploy:npm_install'
 
 namespace :db do
 
