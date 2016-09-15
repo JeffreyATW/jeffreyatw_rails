@@ -2,7 +2,7 @@
 lock '3.6.1'
 
 set :application, "jeffreyatw"
-set :repo_url,  "git@github.com:JeffreyATW/jeffreyatw_rails.git"
+set :repo_url,  "git@jeffreyatw-rails.github.com:JeffreyATW/jeffreyatw_rails.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
