@@ -54,7 +54,7 @@ namespace :deploy do
   desc "Install npm modules"
   task :npm_install do
     on roles(:app) do
-      execute "cd #{current_path}; npm install"
+      execute "cd #{fetch(:release_path)}; source ~/.profile; npm install"
     end
   end
 end
