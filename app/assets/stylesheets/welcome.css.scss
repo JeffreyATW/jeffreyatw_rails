@@ -206,6 +206,10 @@ section {
   transition: transform 0.4s ease;
 }
 
+.tmblr-iframe {
+  display: none;
+}
+
 @media only screen and (min-width: 803px) {
   body {
     width: 803px;
