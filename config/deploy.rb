@@ -10,6 +10,8 @@ set :repository,  "git@jeffreyatw-rails.github.com:JeffreyATW/jeffreyatw_rails.g
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/jeffreyatw/webapps/jeffreyatw"
 
+set :dotenv_role, [:app, :web]
+
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -29,7 +31,6 @@ set :linked_files, fetch(:linked_files, []).push('.env')
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log')
 
-# Default value for default_env is {}
 # Default value for default_env is {}
 set :default_env, {
   PATH: "#{fetch(:deploy_to)}/gems/bin:$PATH",
