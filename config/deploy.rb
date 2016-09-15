@@ -1,4 +1,5 @@
 require "bundler/capistrano"
+require "dotenv/capistrano"
 
 set :application, "jeffreyatw"
 set :repository,  "git@jeffreyatw-rails.github.com:JeffreyATW/jeffreyatw_rails.git"
