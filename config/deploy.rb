@@ -53,7 +53,9 @@ namespace :deploy do
 
   desc "Install npm modules"
   task :npm_install do
-    run "cd #{current_path}; npm install"
+    on roles(:app) do
+      execute "cd #{current_path}; npm install"
+    end
   end
 end
 after 'bundler:install', 'deploy:npm_install'
