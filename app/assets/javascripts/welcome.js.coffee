@@ -27,7 +27,7 @@ $ ->
       rotate = "none"
     $(".rotation").css("-webkit-transform", rotate).css("-moz-transform", rotate).css("-ms-transform", rotate).css("-o-transform", rotate).css("transform", rotate)
 
-  $.getJSON "http://pipes.yahoo.com/pipes/pipe.run?_id=3615cdd72b5a2c5e762feca9631d0e79&_render=json&_callback=?", (data) ->
+  $.getJSON "//pipes.yahoo.com/pipes/pipe.run?_id=3615cdd72b5a2c5e762feca9631d0e79&_render=json&_callback=?", (data) ->
     $.each data.value.items, (i, item) ->
       $li = $("<li>")
       $h2 = $("<h2>")
