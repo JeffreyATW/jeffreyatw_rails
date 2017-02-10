@@ -27,6 +27,7 @@ $ ->
       rotate = "none"
     $(".rotation").css("-webkit-transform", rotate).css("-moz-transform", rotate).css("-ms-transform", rotate).css("-o-transform", rotate).css("transform", rotate)
 
+###
   $.getJSON "//pipes.yahoo.com/pipes/pipe.run?_id=3615cdd72b5a2c5e762feca9631d0e79&_render=json&_callback=?", (data) ->
     $.each data.value.items, (i, item) ->
       $li = $("<li>")
@@ -44,3 +45,4 @@ $ ->
       $li.append $h2
       $li.append $p
       $("section.journal ul").append $li
+###
