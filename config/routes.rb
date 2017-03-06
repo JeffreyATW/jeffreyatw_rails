@@ -50,6 +50,7 @@ Jeffreyatw::Application.routes.draw do
   #     resources :products
   #   end
 
+=begin
   get "resume" => redirect("https://docs.google.com/document/pub?id=1cO25pchy9k4VPChGw4CLKbMa4UjMeTXcuc4o3VSYk4g&embedded=true")
 
   get "noisegate" => "welcome#noisegate"
@@ -59,6 +60,7 @@ Jeffreyatw::Application.routes.draw do
   get "atom(.:format)" => redirect("/car/rss.xml")
   get "characters.shtml" => redirect("/car/characters")
   get "feed" => redirect("/blog/feed/")
+=end
 
   get "underwater" => "welcome#underwater"
 
@@ -82,7 +84,7 @@ Jeffreyatw::Application.routes.draw do
                   'about_shadow.gif', 'archive.html', 'art.gif',
                   'art_shadow.gif', 'atom.xml', 'bg.jpg', 'bio.html',
                   'carbottom.html', 'carbottom_old.html', 'cartest.shtml',
-                  'cartop.html', 'cartop_old.html', 'characters_old.shtml',
+                  'cartop.html', 'cartop_old.html', 'characters.shtml', 'characters_old.shtml',
                   'ck_yourmom.jpg', 'comic.html', 'comics.gif',
                   'comics.shtml', 'comics_shadow.gif', 'contact.gif',
                   'contact_shadow.gif', 'ddr_sims.gif', 'ddr_sims.shtml',
